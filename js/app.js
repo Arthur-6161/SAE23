@@ -273,3 +273,31 @@ function formatDate(date) {
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// Fonction pour changer le fond d'écran selon la météo
+function changeBackgroundByWeather(weatherCode) {
+  // Retirer toutes les classes météo existantes
+  document.body.classList.remove('rainy', 'cloudy', 'snowy', 'stormy', 'foggy', 'night');
+  
+  // Déterminer le type de météo selon le code
+  let weatherClass = '';
+  
+  if ([10, 11, 12, 13, 14, 15, 16, 40, 41, 42, 43, 44, 45, 46, 47, 48].includes(weatherCode)) {
+    weatherClass = 'rainy'; // Pluie
+  } else if ([20, 21, 22, 30, 31, 32, 60, 61, 62, 63, 64, 65, 66, 67, 68, 70, 71, 72, 73, 74, 75, 76, 77, 78].includes(weatherCode)) {
+    weatherClass = 'snowy'; // Neige
+  } else if ([100, 101, 102, 103, 104, 105, 106, 107, 108, 120, 121, 122, 123, 124, 125, 126, 127, 128, 130, 131, 132, 133, 134, 135, 136, 137, 138, 140, 141, 142].includes(weatherCode)) {
+    weatherClass = 'stormy'; // Orage
+  } else if ([5, 6].includes(weatherCode)) {
+    weatherClass = 'foggy'; // Brouillard
+  } else if ([2, 3, 4].includes(weatherCode)) {
+    weatherClass = 'cloudy'; // Nuageux
+  } else if (weatherCode === 0 || weatherCode === 1) {
+    weatherClass = ''; // Ensoleillé (fond par défaut)
+  }
+  
+  // Ajouter la classe correspondante
+  if (weatherClass) {
+    document.body.classList.add(weatherClass);
+  }
+}

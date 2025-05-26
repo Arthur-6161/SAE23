@@ -9,6 +9,10 @@ function createWeatherCards(data, communeName, options) {
   // Traiter la prévision du jour actuel (jour 0)
   const todayForecast = data.forecast[0];
   
+
+  changeBackgroundByWeather(todayForecast.weather);
+
+
   // Créer la carte du jour
   const mainCard = document.createElement("div");
   mainCard.className = "weather-card";

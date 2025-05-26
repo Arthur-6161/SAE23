@@ -23,14 +23,60 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Couleur des icônes météo en mode clair */
+.weather-icon i {
+  color: #ffffff; /* Bleu ciel clair pour les nuages */
+}
+
+/* En mode sombre, garde une couleur qui contraste bien */
+:root.dark-mode .weather-icon i {
+  color: #4682B4; /* Gris-bleu plus clair */
+}
+
+/* Pour les icônes dans les prévisions aussi */
+.forecast-header i {
+  color: var(--color-secondary);
+}
+
+/* Fond par défaut (ensoleillé) */
 body {
   margin: auto;
   max-width: 1280px;
-  background-color: var(--color-primary);
+  background-image: url(https://f.hellowork.com/blogdumoderateur/2013/08/windows-xp.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-size: 1.25rem;
   font-family: "Roboto", sans-serif;
   color: var(--color-text);
 }
+
+/* Classes pour différents types de météo */
+body.rainy {
+  background-image: url(https://www.oceanclock.com/img/modules/oh_news/news/56_picture.jpg);
+}
+
+body.cloudy {
+  background-image: url(https://www.fond-ecran-hd.net/Public/uploads/2019-01-14/212.jpg);
+}
+
+body.snowy {
+  background-image: url(https://www.fabienbeilhe.com/content/images/size/w1200/2023/10/049-comment-photographier-neige.jpg);
+}
+
+body.stormy {
+  background-image: url(https://www.justgeek.fr/wp-content/uploads/2021/11/tempete-en-mer.jpg);
+}
+
+body.foggy {
+  background-image: url(https://playstationinside.fr/wp-content/uploads/2022/01/FKHccrfXwAIFLXZ-1024x436.jpeg);
+}
+
+body.night {
+  background-image: url(https://i.pinimg.com/736x/bf/91/d7/bf91d7abea4aa55e125882af9e5f0f9b.jpg);
+}
+
+
 
 header {
   background-color: var(--color-secondary);
