@@ -151,8 +151,8 @@ validationButton.addEventListener("click", async () => {
       
       // Récupérer les coordonnées de la commune sélectionnée
       const selectedOption = communeSelect.options[communeSelect.selectedIndex];
-      const longitude = selectedOption.dataset.longitude;
-      const latitude = selectedOption.dataset.latitude;
+      const longitude = parseFloat(selectedOption.dataset.longitude).toFixed(4);
+      const latitude = parseFloat(selectedOption.dataset.latitude).toFixed(4);
       
       // Créer les cartes météo
       createWeatherCards(data, communeName, {

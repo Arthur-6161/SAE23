@@ -79,12 +79,18 @@ body.night {
 
 
 header {
-  background-color: var(--color-secondary);
+  background-color: var(--color-font);
   margin: 20px auto;
   width: 80%;
   border-radius: 15px;
   padding: 80px 20px 20px;
   text-align: center;
+  color: var(--color-secondary);
+}
+
+/* Spécifiquement pour le mode sombre */
+:root.dark-mode header {
+  background-color: var(--color-secondary);
   color: var(--color-font);
 }
 
@@ -194,22 +200,27 @@ h1 {
 
 .checkbox-group {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 15px;
   margin-top: 10px;
+  align-items: flex-start;
 }
 
 .checkbox-item {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  width: 100%;
 }
 
 .checkbox-item input[type="checkbox"] {
   min-width: unset;
   width: 16px;
   height: 16px;
+}
+
+.checkbox-item label {
+  white-space: nowrap;
 }
 
 #validationButton {
@@ -407,11 +418,6 @@ footer {
     height: 120px;
   }
 
-  .checkbox-group {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 20%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -432,7 +438,10 @@ footer {
     height: 35px;
     font-size: 0.9rem;
   }
-}
+  
+  .checkbox-group {
+    gap: 10px;
+  }
 
 @media screen and (max-width: 425px) {
   #cityForm {
@@ -449,4 +458,8 @@ footer {
     height: 30px;
     font-size: 0.8rem;
   }
-}
+  
+  .checkbox-group {
+    gap: 8px;
+  }
+}}
