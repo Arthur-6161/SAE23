@@ -39,7 +39,6 @@ Le projet répond aux exigences suivantes :
 ├── js/
 │   ├── app.js               # Logique principale : appels API, événements DOM
 │   └── weatherCard.js       # Composants dynamiques d'affichage météo
-├── favicon/                 # Icône de l’onglet
 └── README.md                # Vous êtes ici !
 ```
 
